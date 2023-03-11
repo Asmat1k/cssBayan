@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .title {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Arial Black', sans-serif;
 }
 
 .accordion-blocks {
-    max-width: 50%;
-    max-height: 100%;
+    max-width: 30%;
+    min-height: 100%;
     margin: 0 auto;
 }
 
 .accordion-blocks__block {
     max-width: 100%;
-    border-top: 0.063rem solid black;
+    border-top: 0.063rem solid rgb(184, 184, 184);
 }
 
 .accordion-blocks__input {
@@ -21,38 +21,88 @@
     appearance: none; 
 }
 
-.accordion-blocks__title {
-    display: block;
+.accordion-blocks__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     cursor: pointer;
-    margin: -10px 0 0 5px;
+    margin: -10px 5px 5px 5px;
+}
+
+.accordion-blocks__title {
+    font-family: 'Arial Black';
+    font-weight: 800;
+    color: blue;
+    transition: .3s;
+}
+
+.accordion-blocks__status {
+    max-width: 0.625rem;
+    max-height: 0.625rem;
+}
+
+.accordion-blocks__close {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    max-width: 10px;
+    max-height: 10px;
+    transform: rotate(45deg);
+    transition: .3s;
 }
 
 .accordion-blocks__info {
-    max-width: 90%;
+    max-width: 70%;
     max-height: 0;
     margin: 10px auto;
+    transition: .5s;
 }
 
 .accordion-blocks__img {
-    opacity: 0;
     max-width: 100%;
-    transition: .5s;
+    height: 0;
+    opacity: 0;
+    transition: .4s;
 }
 
 
 /* открытие */
-
 .accordion-blocks__input:checked ~ .accordion-blocks__info {
     max-height: 100%;
 }
 .accordion-blocks__input:checked ~ .accordion-blocks__info .accordion-blocks__img {
+    height: 100%;
     opacity: 1;
 }
 
-.accordion-blocks__title:hover ~ .accordion-blocks__info {
-    display: block;
+.accordion-blocks__input:hover ~ .accordion-blocks__info {
+    max-height: 100%;
 }
 .accordion-blocks__input:hover ~ .accordion-blocks__info .accordion-blocks__img {
+    height: 100%;
     opacity: 1;
+}
+
+/* кнопки */
+.accordion-blocks:hover .accordion-blocks__input:checked ~ .accordion-blocks__header .accordion-blocks__status .accordion-blocks__close {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+.accordion-blocks__input:hover ~ .accordion-blocks__header .accordion-blocks__status .accordion-blocks__close {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+.accordion-blocks:hover .accordion-blocks__block .accordion-blocks__header .accordion-blocks__status .accordion-blocks__close {
+    opacity: 1;
+}
+
+/* текст */
+.accordion-blocks__block:hover .accordion-blocks__header .accordion-blocks__title {
+    color: black;
+    transition: .3s;
+}
+.accordion-blocks__input:checked ~ .accordion-blocks__header .accordion-blocks__title {
+    color: black;
+    transition: .3s;
 }
 
