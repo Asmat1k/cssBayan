@@ -11,6 +11,7 @@
 }
 
 .accordion-blocks__block {
+    cursor: pointer;
     max-width: 100%;
     border-top: 0.063rem solid rgb(184, 184, 184);
 }
@@ -52,6 +53,8 @@
 }
 
 .accordion-blocks__info {
+    display: block;
+    cursor: pointer;
     max-width: 70%;
     max-height: 0;
     margin: 10px auto;
@@ -65,7 +68,6 @@
     transition: .4s;
 }
 
-
 /* открытие */
 .accordion-blocks__input:checked ~ .accordion-blocks__info {
     max-height: 100%;
@@ -75,10 +77,10 @@
     opacity: 1;
 }
 
-.accordion-blocks__input:hover ~ .accordion-blocks__info {
+.accordion-blocks__block:hover .accordion-blocks__info {
     max-height: 100%;
 }
-.accordion-blocks__input:hover ~ .accordion-blocks__info .accordion-blocks__img {
+.accordion-blocks__block:hover .accordion-blocks__info .accordion-blocks__img {
     height: 100%;
     opacity: 1;
 }
