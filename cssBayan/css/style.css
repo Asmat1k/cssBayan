@@ -161,7 +161,7 @@ body {
 
 @media(max-width: 980px) {
     .title {
-        margin-top: 5px;
+        margin-top: 0.313rem;
     }
     .accordion-blocks {
         max-width: 70%;
